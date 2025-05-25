@@ -44,7 +44,6 @@ const bucketName = 'mybucket';
   }
 })();
 
-// --- Utility: resequence IDs after delete ---
 function resequenceIds() {
   db.serialize(() => {
     db.all(`SELECT id FROM files ORDER BY id`, [], (err, rows) => {
@@ -154,7 +153,6 @@ app.delete('/ekzo-test/files/:name', authenticate, authorize('admin'), (req, res
     });
   });
 });
-
 
 
  app.listen(PORT, '0.0.0.0', () => {
