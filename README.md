@@ -61,7 +61,7 @@ nodejs index.js
   **Request** (JSON):
   ```json
   {
-    "username": "admin",
+    "login": "admin",
     "password": "admin123"
   }
   ```
