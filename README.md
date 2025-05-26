@@ -30,7 +30,7 @@ Ekzo-Test — это RESTful API для управления файлами с �
 
 ```bash
 # 1. Клонируем репозиторий
-git clone git@github.com:Wargencob/ekzo-test.git
+git clone git@github.com:Wargencob/ekzo-test
 cd ekzo-test
 
 # 2. Устанавливаем зависимости
