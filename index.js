@@ -15,7 +15,7 @@ const jwt = require('jsonwebtoken');
 // // File system
 const fs = require('fs');
 // // Server port
-const PORT = 3000;
+const process.env.PORT || 3000;
 // // Auth, login, authorize
 const { loginRoute, authenticate, authorize } = require('./auth');
 
@@ -156,7 +156,7 @@ app.delete('/ekzo-test/files/:name', authenticate, authorize('admin'), (req, res
 
 
  app.listen(PORT, '0.0.0.0', () => {
-   console.log(`Server running on http://3281bf5af7de.vps.myjino.ru:${PORT}`);
+   console.log(`Server running on localhost:${PORT}`);
  });
 
 
