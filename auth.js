@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const db = require('./db');
 
-// 1) Route /login
 function loginRoute(app) {
   app.post('/login', (req, res) => {
     const { login, password } = req.body;
@@ -29,7 +28,6 @@ function loginRoute(app) {
   });
 }
 
-// 2) Middleware to verify token
 function authenticate(req, res, next) {
   const auth = req.headers.authorization;
   if (!auth || !auth.startsWith('Bearer '))
@@ -42,7 +40,6 @@ function authenticate(req, res, next) {
   });
 }
 
-// 3) Middleware to check roles
 function authorize(...roles) {
   return (req, res, next) => {
     if (!req.user || !roles.includes(req.user.role))
